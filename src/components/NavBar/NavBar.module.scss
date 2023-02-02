@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  @include shape(100vw, 100vh);
+  @include shape(100vw, 100svh);
   background-color: $color-white;
 
   &--dark {
