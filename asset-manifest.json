@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/gadgets-store/static/css/main.53844b20.css",
+    "main.css": "/gadgets-store/static/css/main.2370e57a.css",
     "main.js": "/gadgets-store/static/js/main.7451d4f0.js",
     "index.html": "/gadgets-store/index.html",
-    "main.53844b20.css.map": "/gadgets-store/static/css/main.53844b20.css.map",
+    "main.2370e57a.css.map": "/gadgets-store/static/css/main.2370e57a.css.map",
     "main.7451d4f0.js.map": "/gadgets-store/static/js/main.7451d4f0.js.map"
   },
   "entrypoints": [
-    "static/css/main.53844b20.css",
+    "static/css/main.2370e57a.css",
     "static/js/main.7451d4f0.js"
   ]
 }
