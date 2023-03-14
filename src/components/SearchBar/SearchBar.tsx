@@ -9,6 +9,7 @@ import {
 import cn from 'classnames';
 import { ThemeContext } from '../../contexts/ThemeContext';
 import { Styles } from '../../types/Styles';
+import { LOCAL_IMG_URL } from '../../api/apiProducts';
 
 type Debounce = (
   func: (args: any) => void, wait: number
@@ -167,7 +168,7 @@ export const SearchBar: FC<Props> = ({ className = '' }) => {
           onClick={handleQueryClear}
         >
           <img
-            src={`./icons/Close_${theme}.svg`}
+            src={`${LOCAL_IMG_URL}/icons/Close_${theme}.svg`}
             alt="Clear"
           />
         </button>
@@ -184,7 +185,7 @@ export const SearchBar: FC<Props> = ({ className = '' }) => {
         onClick={handleInputToggle}
       >
         <img
-          src={`./icons/Search_${theme}.svg`}
+          src={`${LOCAL_IMG_URL}/icons/Search_${theme}.svg`}
           alt="Search"
         />
       </button>

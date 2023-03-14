@@ -4,6 +4,7 @@ import { ThemeContext } from '../../contexts/ThemeContext';
 import { SearchLink } from '../SearchLink';
 import { SearchParams } from '../../utils/searchHelper';
 import { Styles } from '../../types/Styles';
+import { LOCAL_IMG_URL } from '../../api/apiProducts';
 
 const styles: Styles = require('./IconButton.module.scss');
 
@@ -67,19 +68,19 @@ export const IconButton: FC<Props> = ({
     if (arrow) {
       const { direction, disabled } = arrow;
 
-      icon = `./icons/Arrow_${direction}_${theme}${disabled ? '_disabled' : ''}.svg`;
+      icon = `${LOCAL_IMG_URL}/icons/Arrow_${direction}_${theme}${disabled ? '_disabled' : ''}.svg`;
     }
 
     if (favorite) {
       const { filled } = favorite;
 
-      icon = filled ? './icons/Heart_filled.svg' : `./icons/Heart_${theme}.svg`;
+      icon = filled ? `${LOCAL_IMG_URL}/icons/Heart_filled.svg` : `${LOCAL_IMG_URL}/icons/Heart_${theme}.svg`;
     }
 
     if (counter) {
       const { action, disabled } = counter;
 
-      icon = `./icons/${action}_${theme}${disabled ? '_disabled' : ''}.svg`;
+      icon = `${LOCAL_IMG_URL}/icons/${action}_${theme}${disabled ? '_disabled' : ''}.svg`;
     }
 
     return icon;

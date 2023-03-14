@@ -5,7 +5,7 @@ import { Product } from '../../types/Product';
 import { ThemeContext } from '../../contexts/ThemeContext';
 import { IconButton } from '../IconButton';
 import { CartContext } from '../../contexts/CartContext';
-import { getImgUrl } from '../../api/apiProducts';
+import { getImgUrl, LOCAL_IMG_URL } from '../../api/apiProducts';
 import { Styles } from '../../types/Styles';
 
 const styles: Styles = require('./CartProductCard.module.scss');
@@ -68,7 +68,7 @@ export const CartProductCard: FC<Props> = ({ className = '', product }) => {
             onClick={() => removeFromCart(productId)}
           >
             <img
-              src={`./icons/Close_${theme}_disabled.svg`}
+              src={`${LOCAL_IMG_URL}/icons/Close_${theme}_disabled.svg`}
               alt="delete"
             />
           </button>

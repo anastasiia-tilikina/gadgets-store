@@ -27,6 +27,10 @@
   &__item {
     margin-bottom: 32px;
 
+    &:last-child {
+      margin-bottom: 0;
+    }
+
     @include onTablet {
       margin-bottom: 0;
     }

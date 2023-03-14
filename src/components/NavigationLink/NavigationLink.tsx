@@ -3,6 +3,7 @@ import cn from 'classnames';
 import { Link } from 'react-router-dom';
 import { ThemeContext } from '../../contexts/ThemeContext';
 import { Styles } from '../../types/Styles';
+import { LOCAL_IMG_URL } from '../../api/apiProducts';
 
 const styles: Styles = require('./NavigationLink.module.scss');
 
@@ -37,14 +38,14 @@ export const NavigationLink: FC<Props> = ({
     >
       {direction === 'left' && (
         <img
-          src={`./icons/Arrow_${direction}_${theme}.svg`}
+          src={`${LOCAL_IMG_URL}/icons/Arrow_${direction}_${theme}.svg`}
           alt=""
         />
       )}
 
       {to === '/' ? (
         <img
-          src={`./icons/Home_${theme}.svg`}
+          src={`${LOCAL_IMG_URL}/icons/Home_${theme}.svg`}
           alt="Home"
         />
       ) : (
@@ -55,7 +56,7 @@ export const NavigationLink: FC<Props> = ({
 
       {direction === 'right' && (
         <img
-          src={`./icons/Arrow_${direction}_${theme}.svg`}
+          src={`${LOCAL_IMG_URL}/icons/Arrow_${direction}_${theme}.svg`}
           alt=""
         />
       )}

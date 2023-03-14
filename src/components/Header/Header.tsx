@@ -3,6 +3,7 @@ import {
   FC, useContext, useEffect, useState,
 } from 'react';
 import { useParams } from 'react-router-dom';
+import { LOCAL_IMG_URL } from '../../api/apiProducts';
 import { ThemeContext } from '../../contexts/ThemeContext';
 import { Category } from '../../types/Category';
 import { Styles } from '../../types/Styles';
@@ -89,7 +90,7 @@ export const Header: FC<Props> = ({ className = '' }) => {
           )}
         >
           <img
-            src={`./icons/Theme_${theme}.svg`}
+            src={`${LOCAL_IMG_URL}/icons/Theme_${theme}.svg`}
             alt="theme"
           />
         </button>
@@ -104,7 +105,7 @@ export const Header: FC<Props> = ({ className = '' }) => {
           )}
         >
           <img
-            src={`./icons/Menu_${theme}.svg`}
+            src={`${LOCAL_IMG_URL}/icons/Menu_${theme}.svg`}
             alt="menu"
           />
         </button>

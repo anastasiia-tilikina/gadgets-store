@@ -7,6 +7,7 @@ import { ThemeContext } from '../../contexts/ThemeContext';
 import { IconButton } from '../IconButton';
 import { useSwipe } from '../../hooks/useSwipe';
 import { Styles } from '../../types/Styles';
+import { LOCAL_IMG_URL } from '../../api/apiProducts'
 
 const styles: Styles = require('./Banner.module.scss');
 
@@ -34,10 +35,10 @@ export const Banner: FC<Props> = ({ className = '' }) => {
   const [index, setIndex] = useState(0);
 
   const images = [
-    './images/Banner-00.png',
-    './images/Banner-01.png',
-    './images/Banner-02.png',
-  ];
+    `${LOCAL_IMG_URL}/images/Banner-00.png`,
+    `${LOCAL_IMG_URL}/images/Banner-01.png`,
+    `${LOCAL_IMG_URL}/images/Banner-02.png`,
+  ]
 
   const handleSlideChange = (i: number) => {
     setIndex(i);

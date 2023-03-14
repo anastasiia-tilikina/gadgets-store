@@ -6,6 +6,9 @@ import { Random } from '../types/Random';
 
 export const BASE_URL = 'https://virass.com/phone_catalog_api';
 
+export const FAKE_BASE_URL = '.';
+export const LOCAL_IMG_URL = '/gadgets-store';
+
 const random: Random = require('../../node_modules/lodash/random');
 
 const getRandomIds = (count: number) => {
@@ -30,6 +33,11 @@ function request<T>(url: string): Promise<T> {
     .then(response => response.json());
 }
 
+function fakeRequest<T>(url: string): Promise<T> {
+  return wait(500)
+    .then(() => require(`${FAKE_BASE_URL}/${url}.json`));
+}
+
 export const revalidate = (
   currParam: string | undefined, nextParam: string | undefined,
 ) => currParam !== nextParam;
@@ -39,7 +47,7 @@ export const getImgUrl = ({
   category,
   color,
   number,
-}: ImgUrlParams) => `${BASE_URL}/img/${category}/${namespaceId}/${color}/0${number}.png`;
+}: ImgUrlParams) => `${LOCAL_IMG_URL}/img/${category}/${namespaceId}/${color}/0${number}.png`;
 
 export const getImages = (
   {
@@ -64,11 +72,11 @@ export const getImages = (
 };
 
 const getProducts = () => {
-  return request<Product[]>('products');
+  return fakeRequest<Product[]>('products');
 };
 
 const getProduct = (id: string) => {
-  return request<Product>(`products/${id}`);
+  return fakeRequest<Product>(`products/${id}`);
 };
 
 const filterByCategory = (cat: string) => {

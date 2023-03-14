@@ -9,6 +9,7 @@ import { SearchLink } from '../SearchLink';
 import { SortKeys, SortMethod } from '../../types/SortMethod';
 import { ItemsOnPage } from '../../types/ItemsOnPage';
 import { Styles } from '../../types/Styles';
+import { LOCAL_IMG_URL } from '../../api/apiProducts';
 
 const styles: Styles = require('./Selector.module.scss');
 
@@ -117,8 +118,8 @@ export const Selector: FC<Props> = ({
 
           <img
             src={isMenuOpen
-              ? `./icons/Arrow_up_${theme}.svg`
-              : `./icons/Arrow_down_${theme}.svg`}
+              ? `${LOCAL_IMG_URL}/icons/Arrow_up_${theme}.svg`
+              : `${LOCAL_IMG_URL}/icons/Arrow_down_${theme}.svg`}
             alt=""
           />
         </button>

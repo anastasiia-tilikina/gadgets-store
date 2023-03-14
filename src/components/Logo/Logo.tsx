@@ -3,6 +3,7 @@ import cn from 'classnames';
 import { Link } from 'react-router-dom';
 import { ThemeContext } from '../../contexts/ThemeContext';
 import { Styles } from '../../types/Styles';
+import { LOCAL_IMG_URL } from '../../api/apiProducts';
 
 const styles: Styles = require('./Logo.module.scss');
 
@@ -33,7 +34,7 @@ export const Logo: FC<Props> = ({
         onClick={onclick}
       >
         <img
-          src={`./icons/Logo_${theme}.png`}
+          src={`${LOCAL_IMG_URL}/icons/Logo_${theme}.png`}
           alt="Logo"
           className={image}
         />

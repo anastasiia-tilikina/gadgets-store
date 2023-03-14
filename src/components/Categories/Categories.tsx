@@ -4,6 +4,7 @@ import { Link, useAsyncValue } from 'react-router-dom';
 import { ThemeContext } from '../../contexts/ThemeContext';
 import { Styles } from '../../types/Styles';
 import { Category } from '../../types/Category';
+import { LOCAL_IMG_URL } from '../../api/apiProducts';
 
 const styles: Styles = require('./Categories.module.scss');
 
@@ -11,6 +12,7 @@ const {
   Categories: categories,
   Categories__title: title,
   Categories__list: list,
+  Categories__item: item,
   Categories__link: link,
   Categories__image: image,
   'Categories__item-title': itemTitle,
@@ -46,6 +48,7 @@ export const Categories: FC<Props> = ({ className = '' }) => {
         {Object.entries(Category).map(([key, value]) => (
           <li
             key={key}
+            className={item}
           >
             <Link
               className={cn(
@@ -56,7 +59,7 @@ export const Categories: FC<Props> = ({ className = '' }) => {
             >
               <img
                 className={image}
-                src={`./images/Category_${key}.png`}
+                src={`${LOCAL_IMG_URL}/images/Category_${key}.png`}
                 alt={key}
               />
             </Link>
